@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Walut</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input, select, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="back-link">Powrót do strony głównej</a>
+    <h1>Kalkulator Walut</h1>
+    <label for="amount">Kwota:</label>
+    <input type="number" id="amount" placeholder="Wprowadź kwotę" />
+
+    <label for="from">Z:</label>
+    <select id="from"></select>
+
+    <label for="to">Na:</label>
+    <select id="to"></select>
+
+    <button id="convertBtn">Przelicz</button>
+    <p id="result"></p>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

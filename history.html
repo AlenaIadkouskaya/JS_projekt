@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia Kursów</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input, select, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #f2f2f2;
+        }
+
+        #rateChart {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" class="back-link">Powrót do strony głównej</a>
+    <h1>Historia Kursów</h1>
+
+    <label for="currency">Wybierz Walutę:</label>
+    <select id="currency"></select>
+
+    <label for="startDate">Data początkowa:</label>
+    <input type="date" id="startDate">
+
+    <label for="endDate">Data końcowa:</label>
+    <input type="date" id="endDate">
+
+    <button id="compareBtn">Porównaj</button>
+
+    <h3>Historia Kursów</h3>
+    <button id="toggleTableBtn">Pokaż wszystkie kursy</button>
+    <table id="historicalRatesTable"  style="display: none;">
+        <thead>
+            <tr>
+                <th>Data</th>
+                <th>Kurs</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    <canvas id="rateChart" width="400" height="200"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

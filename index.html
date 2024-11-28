@@ -1,11 +1,46 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <style>
 
-        </style>
-    </head>
-    <body>
-        <h1>Konwerter walut</h1>
-    </body>
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Walut</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 100px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        .option {
+            margin: 20px;
+            padding: 15px 30px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1.2em;
+        }
+
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Wybierz opcję</h1>
+
+    <div>
+        <div class="option" onclick="window.location.href='allRates.html'">Pokaż wszystkie kursy</div>
+        <div class="option" onclick="window.location.href='convert.html'">Przelicz walutę</div>
+        <div class="option" onclick="window.location.href='history.html'">Pokaż historię kursów</div>
+    </div>
+</body>
+
 </html>
