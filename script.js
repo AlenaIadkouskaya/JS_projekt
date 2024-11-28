@@ -51,22 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // const toggleTableBtn = document.getElementById("toggleTableBtn");
-    // if (toggleTableBtn) {
-    //     toggleTableBtn.addEventListener("click", () => {
-    //         const ratesTable = document.getElementById("ratesTable");
-    //         const displayStyle = window.getComputedStyle(ratesTable).display;
-    //         if (displayStyle == "none") {
-    //             ratesTable.style.display = "table";
-    //             toggleTableBtn.textContent = "Ukryj wszystkie kursy";
-    //         } else {
-    //             ratesTable.style.display = "none";
-    //             toggleTableBtn.textContent = "Pokaż wszystkie kursy";
-    //         }
-    //     });
-    // }
-
-
     const convertBtn = document.getElementById("convertBtn");
     if (convertBtn) {
         convertBtn.addEventListener("click", () => {
@@ -94,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            const convertedAmount = (amount / fromRate.mid) * toRate.mid;
+            const convertedAmount = (amount / toRate.mid) * fromRate.mid;
             document.getElementById("result").textContent = `Wynik: ${convertedAmount.toFixed(2)} ${toCurrency}`;
         });
     }
