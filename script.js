@@ -136,6 +136,8 @@ async function fetchRates() {
 // funkcja do uzupełnienia kursów walutowych z listy
 function fillRatesTable(rates) {
     const tbody = document.querySelector("#ratesTable tbody");
+
+
     rates.forEach(rate => {
         const row = document.createElement("tr");
         const midValue = typeof rate.mid === "number" ? rate.mid.toFixed(2) : "N/A";
@@ -176,16 +178,25 @@ function displayHistoricalData(historicalRates, selectedCurrency) {
         alert("No data found for the selected period.");
         return;
     }
+    // wyliczamy min & max
+    let minRate = Math.min(...historicalRates.map(rate => rate.mid)); 
+    let maxRate = Math.max(...historicalRates.map(rate => rate.mid)); 
 
-    console.log('Historical Rates:', historicalRates);
-
-    // uzupełniamy tabelę kursów historycznych
     const tableBody = document.querySelector("#historicalRatesTable tbody");
-    tableBody.innerHTML = '';
+    tableBody.innerHTML = ''; // czyścimy tabele na formie
 
     historicalRates.forEach(rate => {
         const row = document.createElement("tr");
-        row.innerHTML = `<td>${rate.effectiveDate}</td><td>${rate.mid.toFixed(2)}</td>`;
+
+        // format 2 znaki po przecinku
+        const midValue = typeof rate.mid === "number" ? rate.mid.toFixed(2) : "N/A";
+
+        // wyliczamy min/max
+        const midClass = (rate.mid === minRate) ? 'min-rate' : (rate.mid === maxRate) ? 'max-rate' : '';
+
+        // budujemy linijke do tabeli
+        row.innerHTML = `<td>${rate.effectiveDate}</td><td class="${midClass}">${midValue}</td>`;
+
         tableBody.appendChild(row);
     });
 
