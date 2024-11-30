@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+    // document.getElementById('rateChart').style.display = 'block';
 
     const convertBtn = document.getElementById("convertBtn");
     if (convertBtn) {
