@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://source.unsplash.com/1600x900/?finance,banking,money'); 
+            background-image: url('img/allRates.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -20,10 +20,12 @@
 
         .back-link {
             font-size: 1.2em;
-            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            margin-left: 450px;
             display: inline-block;
             text-decoration: none;
-            color: #007bff;
+            color: white;
         }
 
         .back-link:hover {
@@ -43,7 +45,7 @@
             margin: 0 auto;
             background-color: #E0FFFF;
             border-radius: 10px;
-            overflow: hidden; 
+            overflow: hidden;
         }
 
         table {
@@ -52,14 +54,15 @@
             border-collapse: collapse;
         }
 
-        th, td {
+        th,
+        td {
             padding: 8px 12px;
             text-align: center;
         }
 
         th {
             background-color: #007bff;
-            color: white;
+            color: blue;
         }
 
         td {
@@ -67,19 +70,20 @@
         }
 
         .table-responsive {
-            max-height: 700px; 
-            overflow-y: auto; 
+            max-height: 700px;
+            overflow-y: auto;
         }
     </style>
 </head>
 
 <body>
 
-        <a href="index.html" class="back-link"><i class="bi bi-arrow-left-circle"></i> Powrót do strony głównej</a>
+    <a href="index.html" class="back-link btn btn-secondary mb-4">Powrót do strony głównej</a>
 
     <h1>Wszystkie kursy</h1>
 
-        <div class="table-container">
+    <div class="table-container">
+
         <div class="table-responsive">
             <table class="table table-striped table-bordered" id="ratesTable">
                 <thead>
@@ -89,7 +93,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                 </tbody>
             </table>
         </div>

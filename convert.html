@@ -13,16 +13,52 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0;
         }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .back-btn-container {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 30px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #result {
+            margin-top: 20px;
+        }
+
     </style>
 </head>
 
 <body class="bg-light">
-    <div class="container mt-5">
-        <a href="index.html" class="btn btn-secondary mb-4">Powrót do strony głównej</a>
+    <div class="container">
+        <div class="back-btn-container">
+            <a href="index.html" class="btn btn-secondary">Powrót do strony głównej</a>
+        </div>
         <div class="card shadow">
             <div class="card-body">
-                <h1 class="card-title text-center mb-4">Kalkulator walut</h1>
+                <h1 class="card-title mb-4">Kalkulator walut</h1>
                 <form>
                     <div class="mb-3">
                         <label for="amount" class="form-label">Kwota:</label>
@@ -38,6 +74,7 @@
                     <div class="mb-3">
                         <label for="to" class="form-label">Na:</label>
                         <select id="to" class="form-select">
+
                         </select>
                     </div>
 
