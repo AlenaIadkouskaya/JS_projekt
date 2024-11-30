@@ -22,6 +22,11 @@
             margin-bottom: 20px;
         }
 
+        .back-link:hover {
+            color: #0056b3;
+        }
+
+
         table th,
         table td {
             text-align: center;
@@ -35,12 +40,39 @@
 
         .row .form-label {
             color: white;
+            text-shadow:
+                1px 1px 0 black,  
+                -1px -1px 0 black,  
+                1px -1px 0 black,  
+                -1px 1px 0 black,  
+                0px 1px 0 black,
+                0px -1px 0 black,
+                1px 0px 0 black,
+                -1px 0px 0 black;
             font-weight: bold;
             font-size: 1.5rem;
         }
+
         #titleForm {
             color: white;
+            text-shadow:
+                1px 1px 0 black,  
+                -1px -1px 0 black,  
+                1px -1px 0 black,  
+                -1px 1px 0 black,  
+                0px 1px 0 black,
+                0px -1px 0 black,
+                1px 0px 0 black,
+                -1px 0px 0 black;
             font-weight: bold;
+        }
+        @media (max-width: 767px) {
+            .back-link {
+                font-size: 1em; 
+                margin-left: 0; 
+                display: block; 
+                text-align: center; 
+            }
         }
     </style>
 </head>
