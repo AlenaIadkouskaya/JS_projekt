@@ -170,7 +170,7 @@ function fillCurrencySelect(rates) {
         currencySelect.appendChild(option);
     });
 };
-
+let chartInstance;
 // funkcja do wyświetlania danych historycznych (kursów walutowych)
 function displayHistoricalData(historicalRates, selectedCurrency) {
     // sprawdzamy
@@ -179,8 +179,8 @@ function displayHistoricalData(historicalRates, selectedCurrency) {
         return;
     }
     // wyliczamy min & max
-    let minRate = Math.min(...historicalRates.map(rate => rate.mid)); 
-    let maxRate = Math.max(...historicalRates.map(rate => rate.mid)); 
+    let minRate = Math.min(...historicalRates.map(rate => rate.mid));
+    let maxRate = Math.max(...historicalRates.map(rate => rate.mid));
 
     const tableBody = document.querySelector("#historicalRatesTable tbody");
     tableBody.innerHTML = ''; // czyścimy tabele na formie
@@ -200,12 +200,16 @@ function displayHistoricalData(historicalRates, selectedCurrency) {
         tableBody.appendChild(row);
     });
 
+    if (chartInstance) {
+        chartInstance.destroy();
+    }
     // dane do wykresu
     const labels = historicalRates.map(rate => rate.effectiveDate);
     const data = historicalRates.map(rate => rate.mid);
 
     // tworzymy wykres 
-    const chart = new Chart(document.getElementById("rateChart"), {
+    const ctx = document.getElementById("rateChart").getContext("2d");
+    chartInstance = new Chart(ctx, {
         type: 'line',
         data: {
             labels: labels,
